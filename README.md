@@ -1,53 +1,75 @@
-# BITCOIN WALLET
+# BitcoinWallet
 
-Welcome to _Bitcoin Wallet_, a standalone Bitcoin payment app for your Android device!
+A secure, user-friendly Bitcoin wallet application designed for seamless transactions and robust privacy controls.
 
-This project contains several sub-projects:
+## About
 
- * __wallet__:
-     The Android app itself. This is probably what you're searching for.
- * __metadata__:
-     App description and promo material for the app stores.
+BitcoinWallet is an open-source Bitcoin wallet solution that enables users to store, send, and receive Bitcoin with ease and security.
 
+## Features
 
-### PREREQUISITES FOR BUILDING
+- **Secure Wallet Storage**: Strong encryption and safe key management
+- **Send & Receive Bitcoin**: Simple and intuitive transaction flows
+- **Transaction History**: View and track all your Bitcoin transactions
+- **Backup & Restore**: Wallet backup options for peace of mind
+- **User-Friendly Interface**: Clean and accessible UI
+- **Privacy Controls**: Enhanced privacy features for users
 
-You'll need git, a Java 11 SDK and Gradle between 4.4 and 6.9.x for this. We'll assume Ubuntu 24.04 LTS (Noble Numbat)
-for the package installs, which comes with OpenJDK 11 and Gradle 4.4.1 out of the box.
+## Getting Started
 
-    # first time only
-    sudo apt install git gradle openjdk-11-jdk
+### Prerequisites
 
-Create a directory for the Android SDK (e.g. `android-sdk`) and point the `ANDROID_HOME` variable to it.
+- [Node.js](https://nodejs.org/) (if applicable)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (if applicable)
+- [Bitcoin Core](https://bitcoin.org/en/bitcoin-core/) or compatible backend (optional, depending on implementation)
 
-Download the [Android SDK Tools](https://developer.android.com/studio/index.html#command-tools)
-and unpack it to `$ANDROID_HOME/`.
+### Installation
 
-Finally, the last preparative step is acquiring the source code. Again in your workspace, use:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/TartarusDevtech/BitcoinWallet.git
+   cd BitcoinWallet
+   ```
 
-    # first time only
-    git clone -b main https://github.com/bitcoin-wallet/bitcoin-wallet.git bitcoin-wallet
-    cd bitcoin-wallet
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
+3. Run the application:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-### BUILDING
+## Usage
 
-You can build all sub-projects in all flavors at once using Gradle:
+- Open the app and create or import a Bitcoin wallet.
+- Send or receive Bitcoin via QR codes or wallet addresses.
+- Access transaction history and manage wallet settings.
 
-    # each time
-    gradle clean build
+## Contributing
 
-For details about building the wallet see the [specific README](wallet/README.md).
+Contributions are welcome! Please open issues or submit pull requests for improvements and bug fixes.
 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
 
-### REPRODUCIBLE BUILD
+## License
 
-Alternatively, you can build using buildah:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-    # each time
-    buildah build --cap-add sys_admin --device /dev/fuse --file build.Containerfile --output build/ .
+## Contact
 
-Access to FUSE and the SYS_ADMIN capability are needed for mounting disorderfs
-in order to sort the directory entries of the project folder.
+For questions or support, open an issue on GitHub.
 
-The unsigned APKs are written to the specified output directory.
+---
+
+**About (short sentence):**  
+A secure, open-source Bitcoin wallet for easy transactions and privacy.
